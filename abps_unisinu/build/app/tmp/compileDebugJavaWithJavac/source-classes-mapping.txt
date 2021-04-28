@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/lulosys/abps_unisinu/BuildConfig.java
+ com.lulosys.abps_unisinu.BuildConfig
