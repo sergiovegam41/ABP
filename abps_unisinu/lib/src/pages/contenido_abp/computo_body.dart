@@ -46,14 +46,9 @@ class _ComputoBodyPageState extends State<ComputoBodyPage> {
           page = value;
         },
         children: [
-          GestureDetector(
-            onTap: (){
-             alerta(context,titulo: "Calificar repartidor",contenido: Content() );
-            },
-          child: card(
+          card(
               url: 'assets/Prspective.jpg',
             ),
-          ),
           card(
             url: 'assets/lateral.jpg',
           ),
