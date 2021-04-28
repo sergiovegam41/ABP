@@ -229,6 +229,10 @@ class HeaderWave extends StatelessWidget {
       height: double.infinity,
       width: double.infinity,
       child: CustomPaint(
+        child:SafeArea(child: Padding(
+          padding: const EdgeInsets.only(top:20.0),
+          child: Text("ABP Computo",style: TextStyle(color:Colors.white,fontSize: 25,fontWeight: FontWeight.bold ),textAlign: TextAlign.center, ),
+        )) ,
         painter: _HeaderWavePainter(),
       ),
     );
