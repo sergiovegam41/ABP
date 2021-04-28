@@ -13,6 +13,7 @@ class _ComputoBodyPageState extends State<ComputoBodyPage> {
   int page = 0;
   int estrella=0;
   List<Widget> data=[];
+  PageController controlador = new PageController();
 
 
   @override
@@ -34,7 +35,28 @@ class _ComputoBodyPageState extends State<ComputoBodyPage> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           cardStack(context),
-           containerInformacion(context)
+          containerInformacion(context),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children:[
+                IconButton(icon: Icon(Icons.arrow_back_ios_sharp ), onPressed: (){
+                  // Navigator.pop(context);
+              
+             page == 0 ? Navigator.pop(context):   controlador.previousPage(duration: Duration(seconds:1),curve: Curves.easeOutCirc  ) ;
+                  setState(() {
+                    
+                  });
+                  })
+                ,IconButton(icon: Icon(Icons.arrow_forward_ios_sharp ), onPressed: (){
+                  controlador.nextPage(duration: Duration(seconds:1),curve: Curves.easeOutCirc ) ;
+                  setState(() {
+                    
+                  });
+                  })
+            ]),
+          )
            ],
       ),
     );
@@ -47,6 +69,7 @@ class _ComputoBodyPageState extends State<ComputoBodyPage> {
       // color: Colors.black,
       width: size.width,
       child: PageView(
+        controller:controlador ,
         onPageChanged: (value) {
           setState(() {});
           page = value;
